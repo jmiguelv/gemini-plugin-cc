@@ -12,5 +12,5 @@
     "claude-code",
     "gemini",
     "plugin"
-  ],
-  "devDependencies": {
+  ]
+}
