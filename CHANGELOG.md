@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.1](https://github.com/jmiguelv/gemini-plugin-cc/compare/gemini-v1.2.0...gemini-v1.2.1) (2026-04-20)
+
+
+### Bug Fixes
+
+* enable auto-edit mode for Gemini CLI calls ([88d2e5b](https://github.com/jmiguelv/gemini-plugin-cc/commit/88d2e5b158b6f437c2cda23cd0067881415891ac))
+* enable auto-edit mode for Gemini CLI calls ([7e6e76a](https://github.com/jmiguelv/gemini-plugin-cc/commit/7e6e76aa653a97be4fc9bfcaef73a9d4c62d5e4b))
+* resolve agent discovery and manifest schema ([da03c0a](https://github.com/jmiguelv/gemini-plugin-cc/commit/da03c0aa9167f51ee398a8a0fcb1f8de9242fc2b))
+* resolve agent discovery by fixing manifest schema and file naming ([64d75f3](https://github.com/jmiguelv/gemini-plugin-cc/commit/64d75f37d05008185156306c8c12a1ff5473245e))
+* revert agent suffix to .md and keep manifest schema fixes ([d3bb06b](https://github.com/jmiguelv/gemini-plugin-cc/commit/d3bb06ba292954e9f755516bc03f6a449e4d678d))
+
 ## [1.2.0](https://github.com/jmiguelv/gemini-plugin-cc/compare/gemini-v1.1.0...gemini-v1.2.0) (2026-04-20)
 
 
