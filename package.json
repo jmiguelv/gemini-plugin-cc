@@ -13,10 +13,4 @@
     "gemini",
     "plugin"
   ],
-  "scripts": {
-    "release": "standard-version"
-  },
   "devDependencies": {
-    "standard-version": "^9.5.0"
-  }
-}
