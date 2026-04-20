@@ -1,3 +1,6 @@
+---
+description: Ask the Gemini CLI a general question or request a task.
+---
 # /gemini:ask
 
 Use this command to ask the Gemini CLI a general question or request a task.
