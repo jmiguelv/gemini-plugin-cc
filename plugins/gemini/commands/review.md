@@ -1,3 +1,6 @@
+---
+description: Perform a code review using the Gemini CLI.
+---
 # /gemini:review
 
 Use this command to perform a code review using the Gemini CLI.
