@@ -1,0 +1,22 @@
+{
+  "name": "gemini",
+  "version": "1.0.0",
+  "description": "Integrate Gemini capabilities into Claude Code via the local Gemini CLI.",
+  "author": "Miguel Vieira <https://github.com/jmiguelv>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmiguelv/gemini-plugin-cc.git"
+  },
+  "keywords": [
+    "claude-code",
+    "gemini",
+    "plugin"
+  ],
+  "scripts": {
+    "release": "standard-version"
+  },
+  "devDependencies": {
+    "standard-version": "^9.5.0"
+  }
+}

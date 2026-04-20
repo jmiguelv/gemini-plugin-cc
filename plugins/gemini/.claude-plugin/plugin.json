@@ -1,0 +1,15 @@
+{
+  "name": "gemini",
+  "displayName": "Gemini CLI Integration",
+  "version": "1.0.0",
+  "description": "Integrate Gemini capabilities into Claude Code via the local Gemini CLI.",
+  "author": {
+    "name": "Miguel Vieira",
+    "url": "https://github.com/jmiguelv"
+  },
+  "homepage": "https://github.com/jmiguelv/gemini-plugin-cc",
+  "repository": "https://github.com/jmiguelv/gemini-plugin-cc",
+  "keywords": ["claude-code", "gemini", "productivity"],
+  "category": "developer-tools",
+  "commands": "./commands"
+}

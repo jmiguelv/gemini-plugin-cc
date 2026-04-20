@@ -1,0 +1,17 @@
+{
+  "name": "gemini-plugins",
+  "owner": {
+    "name": "Miguel Vieira",
+    "url": "https://github.com/jmiguelv"
+  },
+  "plugins": [
+    {
+      "name": "gemini",
+      "source": {
+        "repo": "jmiguelv/gemini-plugin-cc",
+        "ref": "main"
+      },
+      "description": "Integrate Gemini capabilities into Claude Code via the local Gemini CLI."
+    }
+  ]
+}
