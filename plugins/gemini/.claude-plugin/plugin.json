@@ -14,6 +14,6 @@
     "./commands/review.md"
   ],
   "agents": [
-    "./agents/gemini-rescue.agent.md"
+    "./agents/gemini-rescue.md"
   ]
 }
