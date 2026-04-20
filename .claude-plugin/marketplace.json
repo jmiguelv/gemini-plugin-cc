@@ -4,11 +4,15 @@
     "name": "jmiguelv",
     "url": "https://github.com/jmiguelv"
   },
+  "metadata": {
+    "description": "Integrate Gemini capabilities into Claude Code via the local Gemini CLI.",
+    "version": "1.1.0"
+  },
   "plugins": [
     {
       "name": "gemini",
       "source": "./plugins/gemini",
-      "description": "Integrate Gemini capabilities into Claude Code via the local Gemini CLI."
+      "description": "Use Gemini CLI from Claude Code."
     }
   ]
 }
