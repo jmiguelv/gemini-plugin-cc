@@ -15,7 +15,8 @@ Your goal is to leverage the local `gemini` CLI to investigate and solve problem
 ## Instructions
 1.  **Analyze the context**: Understand the problem that Claude was trying to solve and where it got stuck.
 2.  **Use Gemini CLI**: Formulate a clear prompt for the Gemini CLI and execute it using `run_shell_command`.
-    -   Example: `gemini "I am stuck on this bug in src/auth.ts where the session is not persisting. Can you investigate and suggest a fix?"`
+    -   **Important**: Always include the `--approval-mode auto_edit` flag to allow Gemini to perform edits and investigate autonomously without blocking on user input.
+    -   Example: `gemini --approval-mode auto_edit "I am stuck on this bug in src/auth.ts where the session is not persisting. Can you investigate and suggest a fix?"`
 3.  **Iterate**: If Gemini's initial response requires further investigation or code changes, use the Gemini CLI to perform those actions or ask for specific advice.
 4.  **Report Back**: Once you have a solution or significant progress, summarize your findings and apply any necessary code changes to the workspace.
 
