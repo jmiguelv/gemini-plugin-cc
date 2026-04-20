@@ -1,32 +1,42 @@
-# Gemini Plugin Agents Reference
+# Gemini Plugin: Contributor & Subagent Reference
 
-This plugin provides specialized agents (subagents) that can be invoked within a Claude Code session to leverage Gemini's capabilities for complex tasks.
+This guide provides architectural context and operational guidelines for AI agents (including Claude Code, Gemini CLI, and specialized subagents) working within this repository.
 
-## Available Agents
+## Repository Overview
+
+This repository contains a **Claude Code plugin** that integrates Gemini capabilities via the local `gemini` CLI.
+
+- **Marketplace Manifest**: `.claude-plugin/marketplace.json` (Defines the registry)
+- **Plugin Manifest**: `plugins/gemini/.claude-plugin/plugin.json` (Defines commands and agents)
+- **Plugin Implementation**: `plugins/gemini/`
+
+## Operational Guidelines
+
+### 1. Release Management
+- **Tool**: [release-please](https://github.com/googleapis/release-please)
+- **Mechanism**: Managed via `release-please-config.json` and `.release-please-manifest.json`.
+- **Version Sync**: `release-please` is configured to automatically sync the version from `package.json` into:
+  - `.claude-plugin/marketplace.json` (`$.metadata.version`)
+  - `plugins/gemini/.claude-plugin/plugin.json` (`$.version`)
+- **Workflow**: Agents should NOT manually bump versions. Always use **Conventional Commits** (e.g., `feat:`, `fix:`) to trigger automated Release PRs.
+
+### 2. Git & Branching
+- **Branch Naming**: Follow conventional commit patterns for branches (e.g., `feat/feature-name`, `fix/bug-fix`, `docs/update-readme`).
+- **Standard Flow**: Always work on feature/fix branches and open PRs to `main`.
+
+### 3. Manifest Schemas
+- **Strict Validation**: Claude Code manifest files (`plugin.json`, `marketplace.json`) have strict schema requirements:
+  - `author` and `owner` must be **objects** with a `name` field.
+  - Paths in `marketplace.json` are relative to the repository root.
+  - Paths in `plugin.json` are relative to the plugin directory.
+
+## Subagent Definitions (Internal)
 
 ### `@gemini-rescue`
+- **Definition**: `plugins/gemini/agents/gemini-rescue.md`
+- **Role**: Fresh-perspective debugging by delegating to local Gemini CLI.
+- **Protocol**: Operates via `run_shell_command("gemini '...'")`.
 
-The Rescue subagent is designed to act as a "fresh perspective" when the primary Claude agent is stuck, hitting a wall with a bug, or facing a complex architectural decision.
-
-- **Primary Goal**: Leverage the local `gemini` CLI to investigate and solve problems.
-- **When to Use**:
-  - Claude is stuck on a difficult bug.
-  - You need an alternative architectural approach.
-  - You want to pressure-test a solution using a different model context.
-- **Capabilities**:
-  - Analyzes the current session context.
-  - Formulates and executes queries to the Gemini CLI.
-  - Iterates on findings to propose or apply fixes.
-
-## How to Invoke
-
-In a Claude Code session, you can invoke agents using the `@` symbol or by delegating a task:
-
-- **Explicit Mention**: `@gemini-rescue Can you look at the race condition in src/auth.ts?`
-- **Delegation**: `delegate to gemini-rescue to investigate why the tests are failing.`
-
-## Technical Details
-
-- **Definition File**: `plugins/gemini/agents/gemini-rescue.md`
-- **Model Configuration**: Defaults to Gemini via the local CLI delegation.
-- **Context Sharing**: The subagent operates on the same local workspace and file system as the primary Claude session.
+## Maintenance Tasks
+- Ensure any new commands added to `plugins/gemini/commands/` are also documented in `README.md`.
+- Ensure new agents added to `plugins/gemini/agents/` are reflected in the `plugin.json` manifest if automatic discovery is insufficient.
